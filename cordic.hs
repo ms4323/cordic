@@ -75,8 +75,8 @@ cordic input n_iter = matrix ( c_s ! 0 * sf : c_s ! 1 * sf : [])
        (i, z, c_s) = foldl iter init $ take n_iter radF
        sf = sfF !! i
 
-cordic_vec :: F16 -> F16 -> F16 -> Int -> F16 -- input is in radian, return matrix of cos(input) and sin(input) for n_iter of iterations
-cordic_vec input x y n_iter = z
- where init = ( 0, input, matrix (x : y : []) ) -- initialize to x0 = 1, y0 = 0; to avoid the last multiplication by scaling factor initialize x to K = 0.607252935
+cordic_vec :: F16 -> F16 -> Int -> F16 -- input is in radian, return matrix of cos(input) and sin(input) for n_iter of iterations
+cordic_vec x y n_iter = z
+ where init = ( 0, 0, matrix (x : y : []) ) -- initialize to x0 = 1, y0 = 0; to avoid the last multiplication by scaling factor initialize x to K = 0.607252935
        (i, z, c_s) = foldl iter_vec init $ take n_iter radF
        --sf = sfF !! i
