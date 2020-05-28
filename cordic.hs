@@ -4,7 +4,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE DataKinds #-}
 
-import Data.List
+import Data.List as L
 import Data.Bits
 import Data.Sized.Matrix as M
 import Data.Sized.Sampled as SMP
